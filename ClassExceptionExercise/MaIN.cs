@@ -18,6 +18,17 @@ namespace ClassExceptionExercise
                 Console.WriteLine($"Invalid radius: {ex.Message}");
             }
 
+            // Test with a radius of zero
+            try
+            {
+                myCircle.SetRadius(0);
+            }
+            catch (InvalidRadiusException ex)
+            {
+                Console.WriteLine($"Invalid radius: {ex.Message}");
+            }
+
+
             // Test with a positive radius
             try
             {
@@ -28,16 +39,6 @@ namespace ClassExceptionExercise
             {
                 Console.WriteLine($"Invalid radius: {ex.Message}");
             }
-
-            // Test with a radius of zero
-            try
-            {
-                myCircle.SetRadius(0);
-            }
-            catch (InvalidRadiusException ex)
-            {
-                Console.WriteLine($"Invalid radius: {ex.Message}");
-            }
         }
     }
 }
@@ -54,26 +55,3 @@ namespace ClassExceptionExercise
 
 
 
-
-
-
-
-
-/*
-class Program
-{
-    static void Main(string[] args)
-    {
-        Circle myCircle = new Circle();
-
-        try
-        {
-            myCircle.SetRadius(-5); // This will throw an exception
-        }
-        catch (InvalidRadiusException ex)
-        {
-            Console.WriteLine($"Invalid radius: {ex.Message}");
-        }
-    }
-}
-*/
